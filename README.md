@@ -31,3 +31,33 @@ This command:
 - Mints 1,000,000 BPX tokens to the first account.
 - Logs the deployed contract address to the console.
 
+## Deploying to Sepolia Testnet
+
+You can deploy the BitpayXToken contract to Sepolia using Alchemy or Infura as a provider.
+
+## 1. Configure .env
+
+Create a .env file with the following:
+PRIVATE_KEY=your_metamask_private_key
+ALCHEMY_API_KEY=your_alchemy_api_key
+ETHERSCAN_API_KEY=your_etherscan_api_key
+
+## 2. Run Deployment
+
+```bash
+npx hardhat run scripts/deploy_sepolia.ts --network sepolia
+```
+
+You should see output like:
+```bash
+BitpayXToken deployed to: 0x1782c702F06863A97b1f9B92B8B28158f39BeCC4
+```
+
+## 3. Verify on Etherscan
+
+```bash
+npx hardhat verify --network sepolia 0x1782c702F06863A97b1f9B92B8B28158f39BeCC4 "1000000000000000000000000"
+```
+You can view your contract at:
+[Sepolia Etherscan](https://sepolia.etherscan.io/address/0x1782c702F06863A97b1f9B92B8B28158f39BeCC4)
+
